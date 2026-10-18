@@ -405,3 +405,44 @@ select { min-width: 220px; }
   .shop-controls, .shop-controls label, .shop-controls select { width: 100%; }
   .cart-row { grid-template-columns: 56px 1fr auto; }
 }
+/* Temporary list layout for the catalogue trial */
+.flower-grid.list-view {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.flower-grid.list-view .flower-card {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  grid-template-areas:
+    "art name"
+    "art category"
+    "art description"
+    "art price"
+    "art link";
+  gap: 4px 16px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.flower-grid.list-view .flower-art {
+  grid-area: art;
+  min-height: 110px;
+  font-size: 40px;
+}
+
+.flower-grid.list-view .flower-card h3 {
+  grid-area: name;
+  margin: 0;
+}
+
+.flower-grid.list-view .flower-category { grid-area: category; }
+.flower-grid.list-view .flower-description { grid-area: description; }
+.flower-grid.list-view .flower-price { grid-area: price; }
+
+.flower-grid.list-view .details-link {
+  grid-area: link;
+  justify-self: start;
+}
